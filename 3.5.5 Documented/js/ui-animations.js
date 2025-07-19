@@ -193,7 +193,7 @@ function initLoadingAnimations() {
  * Initialisiert Scroll-Indikator Animation
  */
 function initScrollIndicator() {
-    const scrollIndicator = document.querySelector('.scroll-indicator');
+    const scrollIndicator = document.querySelector('#scroll-down');
     if (!scrollIndicator) return;
     
     // Bounce Animation
@@ -210,7 +210,12 @@ function initScrollIndicator() {
         const sections = document.querySelectorAll('.section');
         if (sections.length > 1) {
             const targetSection = sections[1];
-            smoothScrollTo(targetSection);
+            
+            // Bei Scroll-Snap-Containern direkt scrollIntoView verwenden
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         } else {
             // Fallback: Scrolle um Viewport-Höhe
             window.scrollBy({
