@@ -1,0 +1,412 @@
+/**
+ * EASTER EGGS STYLES
+ * Von: MrMcMicky (Michael)
+ * 
+ * Alle Styles für die versteckten Features.
+ * Diese Datei enthält die Animationen und visuellen Effekte.
+ * 
+ * LERNPUNKTE FÜR YANNIK:
+ * 1. CSS Animationen sind performanter als JavaScript-Animationen
+ * 2. Transform und Opacity sind die besten Properties für Animationen
+ * 3. Will-change hilft dem Browser Animationen zu optimieren
+ * 
+ * VERBESSERUNGSMÖGLICHKEITEN:
+ * - GPU-beschleunigte Animationen mit transform3d()
+ * - CSS Variables für einfache Anpassungen
+ * - Reduced Motion Media Query für Accessibility
+ */
+
+/* Schwebende Herzen Animation */
+.floating-heart {
+    position: fixed;
+    font-size: 30px;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    
+    /* Custom Properties für Variation */
+    --float-duration: 6s;
+    --sway-amount: 30px;
+    
+    /* Animation */
+    animation: 
+        float-up var(--float-duration) linear forwards,
+        sway 2s ease-in-out infinite;
+    
+    /* Performance-Optimierung */
+    will-change: transform, opacity;
+}
+
+/* Aufwärts-Bewegung */
+@keyframes float-up {
+    0% {
+        transform: translateY(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        transform: translateY(-50px) scale(1);
+        opacity: 1;
+    }
+    90% {
+        transform: translateY(calc(-100vh - 200px)) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(-100vh - 300px)) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Seitliche Schwank-Bewegung */
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(var(--sway-amount));
+    }
+    75% {
+        transform: translateX(calc(var(--sway-amount) * -1));
+    }
+}
+
+/* Christliche Symbole */
+.christian-symbol {
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.7),
+        0 0 20px rgba(255, 215, 0, 0.5),
+        0 0 30px rgba(255, 215, 0, 0.3);
+    
+    /* Leichtes Schweben */
+    animation: gentle-float 3s ease-in-out infinite;
+}
+
+@keyframes gentle-float {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(5deg); 
+    }
+}
+
+/* Easter Egg Benachrichtigung */
+.easter-egg-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    z-index: 10000;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Glanz-Effekt */
+    position: relative;
+    overflow: hidden;
+}
+
+.easter-egg-notification::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+/* Easter Egg Modal */
+.easter-egg-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+    /* Smooth fade-in */
+    animation: fadeIn 0.3s ease-out;
+}
+
+.easter-egg-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.easter-egg-content {
+    position: relative;
+    background: #1e1e2e;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    
+    /* Smooth slide-up */
+    animation: slideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Easter Egg Liste Items */
+.easter-egg-content h2 {
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #44475a;
+    background: linear-gradient(135deg, #ff79c6 0%, #bd93f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.easter-egg-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.easter-egg-content p {
+    margin: 0 0 15px 0;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Schließen-Button */
+.easter-egg-close-btn {
+    margin-top: 20px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #50fa7b 0%, #5af78e 100%);
+    color: #282a36;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    float: right;
+    
+    /* Schatten für Tiefe */
+    box-shadow: 
+        0 4px 15px rgba(80, 250, 123, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.easter-egg-close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(80, 250, 123, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.easter-egg-close-btn:active {
+    transform: translateY(0);
+}
+
+/* Gefundene vs. Nicht gefundene Easter Eggs */
+.easter-egg-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.easter-egg-item.found {
+    background: rgba(80, 250, 123, 0.1);
+    border: 1px solid rgba(80, 250, 123, 0.3);
+}
+
+.easter-egg-item.not-found {
+    opacity: 0.5;
+    filter: grayscale(50%);
+}
+
+.easter-egg-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Progress Bar für Easter Eggs */
+.easter-egg-progress {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.easter-egg-progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.easter-egg-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #50fa7b 0%, #5af78e 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+    
+    /* Animierter Glanz */
+    position: relative;
+    overflow: hidden;
+}
+
+.easter-egg-progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: progressShine 2s infinite;
+}
+
+@keyframes progressShine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Mobile Optimierungen */
+@media (max-width: 768px) {
+    .floating-heart {
+        font-size: 20px;
+    }
+    
+    .easter-egg-notification {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+    
+    .easter-egg-content {
+        padding: 20px;
+    }
+    
+    .christian-symbol {
+        font-size: 40px;
+    }
+}
+
+/* Reduced Motion für Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .floating-heart,
+    .christian-symbol,
+    .easter-egg-notification,
+    .easter-egg-modal {
+        animation: none !important;
+        transition: opacity 0.3s ease !important;
+    }
+    
+    @keyframes float-up {
+        to {
+            opacity: 0;
+        }
+    }
+}
+
+/* Debug Mode Styles */
+.debug-mode .floating-heart {
+    border: 2px solid red;
+}
+
+.debug-mode .christian-symbol {
+    border: 2px solid blue;
+}
+
+/* Hint für klickbare Easter Egg Elemente */
+[data-easter-egg] {
+    cursor: help;
+    position: relative;
+}
+
+[data-easter-egg]:hover::after {
+    content: attr(data-easter-egg-hint);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+    pointer-events: none;
+}
