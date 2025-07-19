@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown since 21.01.2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Banner -->
+  <div class="top-banner">
+    🎉 More features coming soon! Check the Upcoming Features section in the Info panel for details
+  </div>
+
+  <!-- Info Overlay -->
+  <div id="infoOverlay" class="info-overlay">
+    <div class="info-backdrop"></div>
+    <div class="info-content">
+      <div class="info-header">
+        <div class="info-header-content">
+          <h2 class="info-title">Info</h2>
+          <div class="info-subtitle">Website information</div>
+        </div>
+        <button id="closeInfo" class="close-button" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="info-body">
+        <!-- Developer Card - Compact Modern Design -->
+        <div id="developerCard" class="developer-card" style="
+          margin: 0 0 16px 0;
+          opacity: 0;
+          transform: translateY(10px) scale(0.95);
+          transform-origin: top center;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        ">
+          <div style="
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+            box-shadow: 0 12px 25px rgba(37, 117, 252, 0.18);
+            position: relative;
+            overflow: hidden;
+            color: white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+          ">
+            <!-- Animated gradient overlay -->
+            <div style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.35) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 182, 193, 0.35) 0%, transparent 50%),
+                radial-gradient(circle at 50% 20%, rgba(173, 216, 230, 0.3) 0%, transparent 45%);
+              opacity: 0.9;
+              pointer-events: none;
+              animation: gradientPulse 12s ease infinite;
+              background-size: 200% 200%;
+            "></div>
+            
+            <div style="display: flex; align-items: center; gap: 20px; text-align: left; position: relative; z-index: 2;">
+              <!-- Profile icon -->
+              <div style="
+                flex-shrink: 0;
+                width: 48px;
+                height: 48px;
+                position: relative;
+              ">
+                <div style="
+                  width: 100%;
+                  height: 100%;
+                  background: rgba(255, 255, 255, 0.9);
+                  border-radius: 14px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                  border: 2px solid white;
+                  overflow: hidden;
+                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                ">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#6a11cb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+              </div>
+              
+              <!-- Developer info -->
+              <div style="flex-grow: 1;">
+                <div style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 4px;
+                ">
+                  <div style="
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1.8px;
+                    color: rgba(255, 255, 255, 0.85);
+                    font-weight: 600;
+                    margin-bottom: 2px;
+                    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+                  ">Creator & Developer
+                  </div>
+                  
+                  <h2 style="
+                    font-size: 1.1rem;
+                    margin: 0;
+                    font-weight: 800;
+                    letter-spacing: -0.5px;
+                    line-height: 1.2;
+                    color: white;
+                    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                    background: linear-gradient(90deg, #fff, #e0e0ff);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    display: inline-block;
+                  ">
+                    Yannik Schluep
+                  </h2>
+                  
+
+                </div>
+                
+                <div style="
+                  margin-top: 8px;
+                  font-size: 0.8rem;
+                  color: rgba(255, 255, 255, 0.85);
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  justify-content: flex-start;
+                  font-style: italic;
+                  padding: 4px 0;
+                  position: relative;
+                ">
+                  <span style="opacity: 0.9;">Made with</span>
+                  <span style="
+                    display: inline-flex;
+                    animation: heartbeat 1.5s ease-in-out infinite;
+                    font-size: 1em;
+                    position: relative;
+                    top: 1px;
+                    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+                  ">❤️</span>
+                  <span style="opacity: 0.9;">for Eva</span>
+                  
+                  <!-- Decorative dot -->
+                  <span style="
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 6px;
+                    height: 6px;
+                    background: rgba(255, 255, 255, 0.4);
+                    border-radius: 50%;
+                    animation: pulse 2s infinite;
+                  "></span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Animated floating elements -->
+            <div style="
+              position: absolute;
+              top: -20px;
+              right: -20px;
+              width: 130px;
+              height: 130px;
+              border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+              background: linear-gradient(45deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+              animation: float 15s ease-in-out infinite;
+              filter: blur(0.8px);
+              box-shadow: 0 0 35px rgba(255,255,255,0.15);
+            "></div>
+            
+            <div style="
+              position: absolute;
+              bottom: -30px;
+              left: -25px;
+              width: 160px;
+              height: 160px;
+              border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+              background: linear-gradient(-45deg, rgba(255,182,193,0.1), rgba(173,216,230,0.1));
+              animation: float 18s ease-in-out infinite reverse;
+              filter: blur(1.2px);
+              box-shadow: 0 0 45px rgba(255,182,193,0.15);
+            "></div>
+            
+            <div style="
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 90%;
+              height: 90%;
+              border-radius: 42% 58% 58% 42% / 45% 48% 52% 55%;
+              background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 80%);
+              animation: pulse 15s ease-in-out infinite alternate;
+              pointer-events: none;
+            "></div>
+            
+            <!-- Subtle grid overlay -->
+            <div style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+              background-size: 14px 14px;
+              opacity: 0.5;
+              pointer-events: none;
+            "></div>
+          </div>
+        </div>
+        
+        <!-- Enhanced animation keyframes -->
+        <style>
+          #developerCard:hover {
+            transform: translateY(10px) scale(1);
+            transition: transform 0.3s ease-out;
+          }
+          
+            @keyframes float {
+            0% { 
+              transform: translate(0, 0) rotate(0deg); 
+              border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            }
+            25% { 
+              transform: translate(10px, 10px) rotate(5deg); 
+              border-radius: 45% 55% 55% 45% / 45% 48% 52% 55%;
+            }
+            50% { 
+              transform: translate(0, 20px) rotate(0deg);
+              border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+            }
+            75% { 
+              transform: translate(-10px, 10px) rotate(-5deg);
+              border-radius: 50% 50% 50% 50% / 40% 50% 50% 60%;
+            }
+            100% { 
+              transform: translate(0, 0) rotate(0deg);
+              border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            }
+          }
+          
+          @keyframes gradientPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          
+          @keyframes pulse {
+            0%, 100% { 
+              opacity: 0.3; 
+              transform: scale(1);
+            }
+            50% { 
+              opacity: 0.5; 
+              transform: scale(1.1);
+            }
+          }
+        </style>
+        
+        <style>
+          @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            35% { transform: scale(0.9); }
+            45% { transform: scale(1.1); }
+            55% { transform: scale(1); }
+          }
+          
+          @keyframes highlightPulse {
+            0% { 
+              opacity: 0;
+              transform: translateY(15px) scale(0.98);
+              box-shadow: 0 5px 25px rgba(156, 89, 182, 0.5);
+            }
+            30% {
+              opacity: 1;
+              transform: translateY(-3px) scale(1.02);
+              box-shadow: 0 0 50px 15px rgba(156, 89, 182, 0.7);
+            }
+            70% {
+              box-shadow: 0 0 40px 10px rgba(156, 89, 182, 0.6);
+            }
+            100% { 
+              opacity: 1;
+              transform: translateY(0) scale(1);
+              box-shadow: 0 15px 40px rgba(142, 68, 173, 0.6);
+            }
+          }
+          
+          .developer-card {
+            position: relative;
+            z-index: 1;
+            background: #8e44ad; /* Fallback solid color */
+            border-radius: 15px;
+            overflow: hidden;
+          }
+          
+          .developer-card > div {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(145deg, #8e44ad, #9b59b6);
+          }
+          
+          .developer-card::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(145deg, #9b59b6, #8e44ad);
+            z-index: 1;
+            opacity: 0;
+            filter: blur(25px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          
+          .developer-card.animate-in {
+            animation: highlightPulse 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+          }
+          
+          .developer-card.animate-in::after {
+            opacity: 0.8;
+            animation: fadeOutGlow 1.5s 1s ease-out forwards, pulseGlow 4s infinite;
+          }
+          
+          @keyframes pulseGlow {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 0.9; filter: blur(25px) brightness(1.2); }
+          }
+          
+          @keyframes fadeOutGlow {
+            to { opacity: 0; }
+          }
+          
+          .developer-card:hover {
+            transform: translateY(-5px) scale(1.01);
+          }
+          
+          .developer-card:hover > div {
+            box-shadow: 0 20px 50px rgba(142, 68, 173, 0.5);
+          }
+        </style>
+        
+        <div class="info-section">
+          <button id="showUpcomingFeatures" class="version-history-button" style="width: 100%; justify-content: center; margin-bottom: 5px;">
+            <span>Show Upcoming Features</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="info-section">
+          <h3 class="section-title">Layout Issues</h3>
+          <div class="info-item">
+            <div class="info-item-content">
+              <div class="info-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <div class="info-item-text">
+                <div class="info-item-title">Layout issues</div>
+                <div class="info-item-description">Some elements on the website may appear misaligned. I am working to resolve these layout issues.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="info-section">
+          <h3 class="section-title">Legal & Information</h3>
+          
+          <!-- Version Info -->
+          <div class="info-item">
+            <div class="info-item-content">
+              <div class="info-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="info-item-text">
+                <div class="info-item-title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                  <span>Version 3.5.3</span>
+                  <span style="opacity: 0.7; font-size: 0.9em; font-weight: normal;">17.07.2025, 00:00</span>
+                </div>
+                <div class="info-item-description">- Improved layout on different screen sizes<br>- Enhanced website wording and text content</div>
+                <button id="showVersionHistory" class="version-history-button">
+                  <span>Older Versions</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Privacy Info -->
+          <div class="info-item" style="margin-top: 16px;">
+            <div class="info-item-content">
+              <div class="info-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M12 8v4"></path>
+                  <path d="M12 16h.01"></path>
+                </svg>
+              </div>
+              <div class="info-item-text">
+                <div class="info-item-title" id="privacyTitle" style="cursor: pointer;">Privacy</div>
+                <div class="info-item-description">
+                  <p>This website does not process any personal data.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Version History Overlay -->
+          <div id="versionHistoryOverlay" class="version-history-overlay">
+            <div class="version-history-backdrop"></div>
+            <div class="version-history-content">
+              <div class="version-history-header">
+                <h2>Version History</h2>
+                <button id="closeVersionHistory" class="close-button" aria-label="Close">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+              <div class="version-history-body" style="padding: 16px; color: #000000;">
+                <div class="version-entry" style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 600; font-size: 1.1em; color: #000000;">Version 3.5.2</span>
+                    <span style="opacity: 0.7; font-size: 0.9em; color: #000000;">14.07.2025, 12:00</span>
+                  </div>
+                  <div style="padding-left: 8px;">
+                    <div style="margin: 6px 0; color: #000000;">• There are now some hidden Easter eggs on the website — good luck discovering them!</div>
+                  </div>
+                </div>
+                
+                <div class="version-entry" style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 600; font-size: 1.1em; color: #000000;">Version 3.5.1</span>
+                    <span style="opacity: 0.7; font-size: 0.9em; color: #000000;">14.07.2025, 10:00</span>
+                  </div>
+                  <div style="padding-left: 8px;">
+                    <div style="margin: 6px 0; color: #000000;">• Fixed transparency issues in desktop version</div>
+                    <div style="margin: 6px 0; color: #000000;">• Added developer information</div>
+                    <div style="margin: 6px 0; color: #000000;">• Minor design changes</div>
+                  </div>
+                </div>
+                
+                <div class="version-entry" style="margin-bottom: 16px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 600; font-size: 1.1em; color: #000000;">Version 3.5.0</span>
+                    <span style="opacity: 0.7; font-size: 0.9em; color: #000000;">11.07.2025, 14:00</span>
+                  </div>
+                  <div style="padding-left: 8px;">
+                    <div style="margin: 6px 0; color: #000000;">• New navigation menu</div>
+                    <div style="margin: 6px 0; color: #000000;">• Separation of Info and Settings</div>
+                    <div style="margin: 6px 0; color: #000000;">• Performance improvements</div>
+                  </div>
+                </div>
+                <div class="version-entry" style="margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.1);">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <span style="font-weight: 600; font-size: 1.1em; color: #000000;">Version 3.4.0</span>
+                    <span style="opacity: 0.7; font-size: 0.9em; color: #000000;">10.07.2025, 19:00</span>
+                  </div>
+                  <div style="padding-left: 8px;">
+                    <div style="margin: 6px 0; color: #000000;">• You can now find a version history in the info section.</div>
+                    <div style="margin: 6px 0; color: #000000;">• Improved design of the mobile- and desktop-version</div>
+                    <div style="margin: 6px 0; color: #000000;">• Added 'Upcoming Features' section to showcase planned improvements</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <style>
+          .upcoming-feature {
+            position: relative;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+          }
+          
+          .upcoming-feature:not(:last-child) {
+            margin-bottom: 30px;
+          }
+          
+          .upcoming-feature:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          }
+          
+          /* Feature 1 - Red/Orange */
+          .upcoming-feature:nth-child(1) {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffebee 100%);
+          }
+          .upcoming-feature:nth-child(1) .info-item-icon {
+            color: #f44336;
+          }
+          
+          /* Feature 2 - Blue */
+          .upcoming-feature:nth-child(2) {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+          }
+          .upcoming-feature:nth-child(2) .info-item-icon {
+            color: #2196f3;
+          }
+          
+          /* Feature 3 - Purple */
+          .upcoming-feature:nth-child(3) {
+            background: linear-gradient(135deg, #f9f0ff 0%, #f3e5f5 100%);
+          }
+          .upcoming-feature:nth-child(3) .info-item-icon {
+            color: #9c27b0;
+          }
+          
+          /* Feature 4 - Easter Egg (Purple/Blue Gradient) */
+          .upcoming-feature:nth-child(4) {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e3f2fd 100%);
+            border: 1px dashed #9c27b0;
+          }
+          .upcoming-feature:nth-child(4) .info-item-icon {
+            color: #9c27b0;
+          }
+          
+          /* Top Banner */
+          .top-banner {
+            background: #4f46e5;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 0.95em;
+            font-weight: 500;
+            position: relative;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+          }
+          
+          /* Coming Soon Badge */
+          .coming-soon-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            color: #555;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.7em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+        </style>
+        
+        <!-- Upcoming Features Overlay -->
+        <div id="upcomingFeaturesOverlay" class="version-history-overlay">
+          <div class="version-history-backdrop"></div>
+          <div class="version-history-content">
+            <div class="version-history-header">
+              <h2>Upcoming Features</h2>
+              <button id="closeUpcomingFeatures" class="close-button" aria-label="Close">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div class="version-history-body">
+              <div class="info-item upcoming-feature">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <div class="info-item-content">
+                  <div class="info-item-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <div class="info-item-text">
+                    <div class="info-item-title">Major Design Overhaul</div>
+                    <div class="info-item-description">A complete visual redesign is in the works, featuring a fresh new look and improved user experience.</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="info-item upcoming-feature">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <div class="info-item-content">
+                  <div class="info-item-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                  </div>
+                  <div class="info-item-text">
+                    <div class="info-item-title">Dark Mode</div>
+                    <div class="info-item-description">A dark theme option will be available soon for better night-time viewing.</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="info-item upcoming-feature">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <div class="info-item-content">
+                  <div class="info-item-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="3" width="7" height="7"></rect>
+                      <rect x="14" y="14" width="7" height="7"></rect>
+                      <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                  </div>
+                  <div class="info-item-text">
+                    <div class="info-item-title">New Website Section</div>
+                    <div class="info-item-description">A new section will be added to the website with additional features and content.</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="info-item upcoming-feature">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <div class="info-item-content">
+                  <div class="info-item-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path>
+                      <path d="M12 8v4"></path>
+                      <path d="M12 16h.01"></path>
+                    </svg>
+                  </div>
+                  <div class="info-item-text">
+                    <div class="info-item-title">More Easter Eggs</div>
+                    <div class="info-item-description">Hidden surprises and secret features waiting to be discovered!</div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        <!-- Developer Info -->
+
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- Settings Overlay -->
+  <div id="settingsOverlay" class="settings-overlay">
+    <div class="settings-backdrop"></div>
+    <div class="settings-content">
+      <div class="settings-header">
+        <h2 class="settings-title">Settings</h2>
+        <button id="closeSettings" class="settings-close-button" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="settings-body">
+        <div class="settings-section">
+          <h3 class="settings-section-title">Appearance</h3>
+          <div class="settings-group">
+            <div class="setting-item">
+              <div class="setting-content">
+                <div class="setting-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                </div>
+                <div class="setting-info">
+                  <div class="setting-header">
+                    <span class="setting-name">Dark Mode</span>
+                    <span class="setting-badge">Coming soon</span>
+                  </div>
+                  <span class="setting-description">Dark design for better visibility</span>
+                </div>
+              </div>
+              <div class="setting-control">
+                <div class="switch disabled">
+                  <span class="slider round"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="settings-footer">
+          <p class="app-version">Version 3.5.3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Menu Buttons Container -->
+  <div class="menu-buttons">
+    <!-- New Menu Button (Top) -->
+    <div class="menu-button-container">
+      <button id="newMenuButton" class="bible-button" aria-label="Menu">
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </button>
+      <span class="new-badge">
+        <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"></path>
+          <path d="m12 19-7-7 7-7"></path>
+        </svg>
+        <span class="new-text">Neu</span>
+      </span>
+    </div>
+    
+    <!-- Bible Menu Button (2nd) -->
+    <button id="bibleButton" class="bible-button" aria-label="Bible">
+      <svg class="bible-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+      </svg>
+    </button>
+    
+    <!-- Settings Menu Button (3rd) -->
+    <button id="newSettingsButton" class="bible-button" aria-label="Settings">
+      <svg class="bible-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.2.6.8 1 1.45 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.55a1.45 1.45 0 0 0-1.45 1.45z"></path>
+      </svg>
+    </button>
+    
+    <!-- Info Menu Button (Bottom) -->
+    <button id="infoButton" class="bible-button" aria-label="Info">
+      <svg class="bible-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="12"></line>
+        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Bible Menu Overlay -->
+  <div id="bibleOverlay" class="bible-overlay">
+    <div class="bible-backdrop"></div>
+    <div class="bible-content">
+      <div class="bible-header">
+        <h2 class="bible-title">Bible</h2>
+        <button id="closeBible" class="bible-close-button" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="bible-body">
+        <div class="bible-verse">
+          <p class="verse-text">"For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."</p>
+          <p class="verse-reference">— John 3:16 (ESV)</p>
+        </div>
+        <div class="bible-verse">
+          <p class="verse-text">"Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths."</p>
+          <p class="verse-reference">— Proverbs 3:5-6 (ESV)</p>
+        </div>
+        <div class="bible-verse">
+          <p class="verse-text">"I can do all things through him who strengthens me."</p>
+          <p class="verse-reference">— Philippians 4:13 (ESV)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="snap-container">
+    <div class="section">
+      <div class="container">
+          <h1><span class="title-line">Together since 21th</span><span class="title-line"> of January 2025</span></h1>
+          <div id="countdown">
+              <div class="time"><span id="days">0</span><span class="label">Days</span></div>
+              <div class="time"><span id="hours">0</span><span class="label">Hours</span></div>
+              <div class="time"><span id="minutes">0</span><span class="label">Minutes</span></div>
+              <div class="time"><span id="seconds">0</span><span class="label">Seconds</span></div>
+          </div>
+          <div style="text-align: center; margin: 1.5rem 0 2rem 0; color: rgba(255, 255, 255, 0.9); font-size: 1rem; font-weight: 500; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);">
+            Counting down to our 1-year anniversary!
+          </div>
+          <div class="scroll-indicator">
+            Scroll down
+            <span>↓</span>
+          </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="milestones-box">
+        <div class="milestones-header">
+          <h2>Milestones</h2>
+          <button id="toggleReachedBtn" class="toggle-reached-btn" style="display: none;">
+            <span class="show-text">Show Reached Milestones</span>
+            <span class="hide-text">Hide Reached Milestones</span>
+            <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+        <ul id="milestones-list"></ul>
+      </div>
+    </div>
+  </div>
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date('2026-01-21T00:00:00+01:00');
+            const now = new Date();
+            let diff = targetDate - now;
+
+            if (diff < 0) diff = 0;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Milestones
+        function formatDate(date) {
+            return date.toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        }
+
+        function getDaysDiff(from, to) {
+            return Math.floor((to - from) / (1000 * 60 * 60 * 24));
+        }
+
+        function renderMilestones() {
+            const startDate = new Date(2025, 0, 21); // 21.01.2025
+            const now = new Date();
+            const milestones = [
+                { label: '1 Week Together', days: 7 },
+                { label: '1 Month Together', days: 30 },
+                { label: '100 Days Together', days: 100 },
+                { label: '6 Months Together', days: 183 },
+                { label: '200 Days Together', days: 200 },
+                { label: '1 Year Together', days: 365 },
+                { label: '1.5 Years Together', days: 547 },
+                { label: '500 Days Together', days: 500 },
+                { label: '2 Years Together', days: 730 },
+                { label: '750 Days Together', days: 750 },
+                { label: '1000 Days Together', days: 1000 },
+                { label: '3 Years Together', days: 1095 },
+                { label: '4 Years Together', days: 1460 },
+                { label: '5 Years Together', days: 1825 },
+                { label: '10 Years Together', days: 3650 },
+                { label: '25 Years Together', days: 9125 },
+                { label: '50 Years Together', days: 18250 }
+            ];
+            const list = document.getElementById('milestones-list');
+            list.innerHTML = '';
+            milestones.forEach(ms => {
+                const msDate = new Date(startDate.getTime() + ms.days * 24 * 60 * 60 * 1000);
+                const daysDiff = getDaysDiff(msDate, now);
+                let li = document.createElement('li');
+                let title = document.createElement('div');
+                title.className = 'milestone-title';
+                title.textContent = ms.label;
+                let detail = document.createElement('div');
+                detail.className = 'milestone-detail';
+                if (now >= msDate) {
+                    li.className = 'reached';
+                    detail.textContent = `Reached on ${formatDate(msDate)} (before ${daysDiff} days)`;
+                } else {
+                    li.className = 'upcoming';
+                    detail.textContent = `in ${-daysDiff} days on ${formatDate(msDate)}`;
+                }
+                li.appendChild(title);
+                li.appendChild(detail);
+                list.appendChild(li);
+            });
+        }
+        renderMilestones();
+        
+        // Handle show/hide reached milestones on mobile
+        const toggleReachedBtn = document.getElementById('toggleReachedBtn');
+        const milestoneItems = document.querySelectorAll('#milestones-list li');
+        let showReached = false;
+        
+        // Function to check if mobile view
+        function isMobileView() {
+            return window.innerWidth < 768;
+        }
+        
+        // Function to update UI based on screen size
+        function updateMobileUI() {
+            if (isMobileView()) {
+                // Show the toggle button on mobile
+                toggleReachedBtn.classList.add('mobile-visible');
+                toggleReachedBtn.style.display = 'flex';
+                
+                // Hide/show reached milestones based on current state
+                milestoneItems.forEach(item => {
+                    if (item.classList.contains('reached')) {
+                        if (showReached) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    }
+                });
+            } else {
+                // On desktop, hide the button and show all milestones
+                toggleReachedBtn.classList.remove('mobile-visible');
+                toggleReachedBtn.style.display = 'none';
+                
+                // Make sure all milestones are visible on desktop
+                milestoneItems.forEach(item => {
+                    item.style.display = '';
+                    item.style.animation = '';
+                });
+            }
+        }
+        
+        // Initial setup
+        updateMobileUI();
+        
+        // Toggle reached milestones visibility
+        function toggleReachedMilestones() {
+            showReached = !showReached;
+            toggleReachedBtn.classList.toggle('active', showReached);
+            
+            // Get all milestone items that are reached
+            const reachedItems = Array.from(milestoneItems).filter(item => 
+                item.classList.contains('reached')
+            );
+            
+            // Toggle visibility of reached items
+            reachedItems.forEach(item => {
+                item.classList.toggle('hidden', !showReached);
+            });
+        }
+        
+        // Add click event listener to the toggle button
+        if (toggleReachedBtn) {
+            toggleReachedBtn.addEventListener('click', toggleReachedMilestones);
+        }
+        
+        // Handle window resize to update UI based on screen size
+        function handleResize() {
+            updateMobileUI();
+        }
+        
+        // Add resize event listener with debounce to improve performance
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(handleResize, 100);
+        });
+    </script>
+    <script>
+      // New Menu Button Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const newMenuButton = document.getElementById('newMenuButton');
+        const bibleButton = document.getElementById('bibleButton');
+        const newSettingsButton = document.getElementById('newSettingsButton');
+        const infoButton = document.getElementById('infoButton');
+        // Buttons in the order they should animate (top to bottom)
+        const buttons = [bibleButton, newSettingsButton, infoButton];
+        let isMenuOpen = false;
+        let isAnimating = false;
+        
+        // Set initial state
+        buttons.forEach(btn => {
+          btn.style.display = 'block';
+          btn.classList.remove('visible');
+        });
+        
+        // Toggle menu visibility
+        function toggleMenu() {
+          if (isAnimating) return;
+          
+          isMenuOpen = !isMenuOpen;
+          isAnimating = true;
+          
+          // Toggle active state for menu button
+          newMenuButton.classList.toggle('active', isMenuOpen);
+          
+          // Toggle visibility of buttons with staggered animation
+          if (isMenuOpen) {
+            // Show buttons with staggered delay (top to bottom)
+            buttons.forEach((btn, index) => {
+              // Set transition properties
+              btn.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+              btn.style.transitionDelay = `${index * 50 + 50}ms`;
+              
+              // Force reflow to ensure the element is rendered before animation
+              void btn.offsetHeight;
+              
+              // Add visible class to start animation
+              btn.classList.add('visible');
+              
+              // Add scale effect
+              btn.style.transform = 'translateY(0) scale(1)';
+              btn.style.opacity = '1';
+            });
+            
+            // Enable interaction after animation completes
+            setTimeout(() => {
+              isAnimating = false;
+            }, 400);
+            
+          } else {
+            // Hide buttons with reverse stagger (bottom to top)
+            buttons.slice().reverse().forEach((btn, index) => {
+              // Set transition for smooth hide with bounce effect
+              btn.style.transition = 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)';
+              btn.style.transitionDelay = `${index * 30}ms`;
+              
+              // Add scale and opacity for smoother collapse
+              btn.style.transform = 'translateY(-10px) scale(0.95)';
+              btn.style.opacity = '0';
+              
+              // Remove visible class to start hide animation
+              setTimeout(() => {
+                btn.classList.remove('visible');
+                
+                // Reset transform after animation completes
+                setTimeout(() => {
+                  btn.style.transform = 'translateY(-20px) scale(0.9)';
+                  btn.style.transition = '';
+                  btn.style.transitionDelay = '';
+                }, 250);
+              }, 50);
+            });
+            
+            // Disable interaction after animation completes
+            setTimeout(() => {
+              isAnimating = false;
+            }, 350);
+          }
+        }
+        
+        // Check if buttons were clicked before (using localStorage)
+        if (localStorage.getItem('menuButtonClicked') === 'true') {
+          newMenuButton.classList.add('hide-glow');
+        }
+        if (localStorage.getItem('bibleButtonClicked') === 'true') {
+          bibleButton.classList.add('hide-glow');
+        }
+        if (localStorage.getItem('settingsButtonClicked') === 'true') {
+          newSettingsButton.classList.add('hide-glow');
+        }
+        if (localStorage.getItem('infoButtonClicked') === 'true') {
+          infoButton.classList.add('hide-glow');
+        }
+
+        // Add click event listeners to buttons
+        newMenuButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (!this.classList.contains('hide-glow')) {
+            this.classList.add('hide-glow');
+            localStorage.setItem('menuButtonClicked', 'true');
+          }
+          toggleMenu();
+        });
+
+        bibleButton.addEventListener('click', function(e) {
+          if (!this.classList.contains('hide-glow')) {
+            this.classList.add('hide-glow');
+            localStorage.setItem('bibleButtonClicked', 'true');
+          }
+        });
+
+        newSettingsButton.addEventListener('click', function(e) {
+          if (!this.classList.contains('hide-glow')) {
+            this.classList.add('hide-glow');
+            localStorage.setItem('settingsButtonClicked', 'true');
+          }
+        });
+
+        infoButton.addEventListener('click', function(e) {
+          if (!this.classList.contains('hide-glow')) {
+            this.classList.add('hide-glow');
+            localStorage.setItem('infoButtonClicked', 'true');
+          }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (isMenuOpen && 
+              !newMenuButton.contains(e.target) && 
+              !bibleButton.contains(e.target) && 
+              !infoButton.contains(e.target)) {
+            toggleMenu();
+          }
+        });
+      });
+      
+      // Bible Menu Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const bibleButton = document.getElementById('bibleButton');
+        const bibleOverlay = document.getElementById('bibleOverlay');
+        const closeBible = document.getElementById('closeBible');
+        
+        // Open Bible menu
+        bibleButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          bibleOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+        
+        // Close Bible menu
+        function closeBibleMenu() {
+          bibleOverlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        
+        // Close when clicking the close button
+        closeBible.addEventListener('click', closeBibleMenu);
+        
+        // Close when clicking outside the content
+        bibleOverlay.addEventListener('click', function(e) {
+          if (e.target === bibleOverlay) {
+            closeBibleMenu();
+          }
+        });
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && bibleOverlay.classList.contains('active')) {
+            closeBibleMenu();
+          }
+        });
+        
+        // Prevent closing when clicking inside the content
+        document.querySelector('.bible-content').addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      });
+    </script>
+    
+    <script>
+      // Overlay functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // Info overlay elements
+        const infoButton = document.getElementById('infoButton');
+        const infoOverlay = document.getElementById('infoOverlay');
+        const closeInfo = document.getElementById('closeInfo');
+        
+        // Settings overlay elements
+        const settingsButton = document.getElementById('newSettingsButton');
+        const settingsOverlay = document.getElementById('settingsOverlay');
+        const closeSettings = document.getElementById('closeSettings');
+        
+        // Toggle info overlay
+        infoButton.addEventListener('click', function() {
+            infoOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Trigger reflow
+            void infoOverlay.offsetWidth;
+            
+            infoOverlay.classList.add('active');
+            
+            // Reset and animate developer card
+            const developerCard = document.getElementById('developerCard');
+            developerCard.classList.remove('animate-in');
+            
+            // Force reflow to reset animation
+            void developerCard.offsetWidth;
+            
+            // Trigger the animation after a small delay
+            setTimeout(() => {
+                developerCard.classList.add('animate-in');
+            }, 150);
+        });
+        
+        function closeInfoOverlay() {
+            infoOverlay.classList.remove('active');
+            // Wait for the animation to complete before hiding the overlay
+            setTimeout(() => {
+                infoOverlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+        
+        // Toggle settings overlay
+        function openSettingsOverlay() {
+            settingsOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Add the active class to trigger the animation
+            setTimeout(() => {
+                settingsOverlay.classList.add('active');
+            }, 10);
+        }
+        
+        function closeSettingsOverlay() {
+            settingsOverlay.classList.remove('active');
+            // Wait for the animation to complete before hiding the overlay
+            setTimeout(() => {
+                settingsOverlay.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+        
+        // Close when clicking the X buttons
+        closeInfo.addEventListener('click', closeInfoOverlay);
+        closeSettings.addEventListener('click', closeSettingsOverlay);
+        
+        // Close when clicking outside the content
+        infoOverlay.addEventListener('click', function(e) {
+            if (e.target === infoOverlay) {
+                closeInfoOverlay();
+            }
+        });
+        
+        settingsOverlay.addEventListener('click', function(e) {
+            if (e.target === settingsOverlay) {
+                closeSettingsOverlay();
+            }
+        });
+        
+        // Close when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (infoOverlay.style.display === 'flex') {
+                    closeInfoOverlay();
+                } else if (settingsOverlay.style.display === 'flex') {
+                    closeSettingsOverlay();
+                }
+            }
+        });
+        
+        // Button click handlers
+        infoButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            openInfoOverlay();
+        });
+        
+        if (settingsButton) {
+            settingsButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                openSettingsOverlay();
+            });
+        }
+      });
+    </script>
+
+    <script>
+        // Version History and Upcoming Features
+        const showVersionHistory = document.getElementById('showVersionHistory');
+        const versionHistoryOverlay = document.getElementById('versionHistoryOverlay');
+        const closeVersionHistory = document.getElementById('closeVersionHistory');
+        
+        // Upcoming Features
+        const showUpcomingFeatures = document.getElementById('showUpcomingFeatures');
+        const upcomingFeaturesOverlay = document.getElementById('upcomingFeaturesOverlay');
+        const closeUpcomingFeatures = document.getElementById('closeUpcomingFeatures');
+
+        function openVersionHistory() {
+            versionHistoryOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeVersionHistoryFunc() {
+            versionHistoryOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Upcoming Features functions
+        function openUpcomingFeatures() {
+          upcomingFeaturesOverlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        }
+        
+        function closeUpcomingFeaturesFunc() {
+          upcomingFeaturesOverlay.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+        
+        // Event listeners for Version History
+        if (showVersionHistory) {
+            showVersionHistory.addEventListener('click', openVersionHistory);
+        }
+
+        if (closeVersionHistory) {
+            closeVersionHistory.addEventListener('click', closeVersionHistoryFunc);
+        }
+
+        // Close when clicking outside the version history content
+        versionHistoryOverlay.addEventListener('click', function(e) {
+          if (e.target === versionHistoryOverlay) {
+            closeVersionHistoryFunc();
+          }
+        });
+        
+        // Event listeners for Upcoming Features
+        if (showUpcomingFeatures) {
+          showUpcomingFeatures.addEventListener('click', openUpcomingFeatures);
+        }
+        
+        if (closeUpcomingFeatures) {
+          closeUpcomingFeatures.addEventListener('click', closeUpcomingFeaturesFunc);
+        }
+        
+        // Close when clicking outside the upcoming features content
+        upcomingFeaturesOverlay.addEventListener('click', function(e) {
+          if (e.target === upcomingFeaturesOverlay) {
+            closeUpcomingFeaturesFunc();
+          }
+        });
+
+        // Close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && versionHistoryOverlay.classList.contains('active')) {
+                closeVersionHistoryFunc();
+            } else if (e.key === 'Escape' && upcomingFeaturesOverlay.style.display === 'flex') {
+                closeUpcomingFeaturesFunc();
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    <div id="floating-hearts"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('floating-hearts');
+            const colors = ['#ff6b6b', '#ff8e8e', '#ffb3b3', '#ffd8d8'];
+            let clickCount = 0;
+            let lastClickTime = 0;
+            let heartInterval;
+            let isActive = false;
+            
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerHTML = '❤';
+                
+                // Random properties for each heart
+                const size = Math.random() * 20 + 10; // 10-30px
+                const duration = Math.random() * 3 + 3; // 3-6 seconds
+                const delay = Math.random() * 2; // 0-2 seconds
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const startPos = Math.random() * 100; // 0-100% from left
+                
+                // Apply styles
+                heart.style.left = `${startPos}%`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.animation = `floatUp ${duration}s ease-in-out ${delay}s`;
+                heart.style.color = color;
+                
+                // Add to container
+                container.appendChild(heart);
+                
+                // Remove heart after animation completes to prevent DOM bloat
+                setTimeout(() => {
+                    heart.remove();
+                }, (duration + delay) * 1000);
+            }
+            
+            function startHeartAnimation() {
+                if (isActive) return;
+                isActive = true;
+                container.style.display = 'block';
+                
+                // Create initial hearts
+                for (let i = 0; i < 15; i++) {
+                    setTimeout(createHeart, i * 300);
+                }
+                
+                // Keep creating new hearts for 6 seconds
+                heartInterval = setInterval(createHeart, 300);
+                
+                // Stop creating new hearts after 6 seconds
+                setTimeout(() => {
+                    clearInterval(heartInterval);
+                    isActive = false;
+                }, 6000);
+            }
+            
+            // Add click handler to seconds display
+            const secondsElement = document.querySelector('#countdown .time:nth-child(4)');
+            if (secondsElement) {
+                secondsElement.style.cursor = 'pointer';
+                secondsElement.title = 'Click me 5 times quickly!';
+                
+                secondsElement.addEventListener('click', () => {
+                    const now = Date.now();
+                    // Reset count if more than 200ms passed since last click
+                    if (now - lastClickTime > 200) {
+                        clickCount = 0;
+                    }
+                    
+                    clickCount++;
+                    lastClickTime = now;
+                    
+                    if (clickCount >= 5) {
+                        clickCount = 0;
+                        // Add animation class to seconds display
+                        secondsElement.classList.add('seconds-easter-egg');
+                        // Remove the animation class after it completes
+                        setTimeout(() => {
+                            secondsElement.classList.remove('seconds-easter-egg');
+                        }, 1500);
+                        startHeartAnimation();
+                    }
+                });
+            }
+            
+            // Easter Egg #2: Type 'love' to see falling hearts
+            let typedString = '';
+            const loveContainer = document.createElement('div');
+            loveContainer.id = 'love-container';
+            document.body.appendChild(loveContainer);
+            
+            // Function to create falling hearts
+            function createFallingHeart() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.className = 'falling-heart';
+                
+                // Random properties
+                const size = Math.random() * 30 + 20; // 20-50px
+                const left = Math.random() * 100; // 0-100% from left
+                const duration = Math.random() * 3 + 3; // 3-6 seconds
+                const color = `hsl(${Math.random() * 60 + 330}, 100%, ${Math.random() * 30 + 60}%)`; // Pink/red shades
+                const rotation = Math.random() * 60 - 30; // -30 to 30 degrees
+                
+                // Apply styles
+                heart.style.left = `${left}%`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.color = color;
+                heart.style.animation = `fall ${duration}s linear`;
+                heart.style.transform = `rotate(${rotation}deg)`;
+                
+                // Add to container
+                loveContainer.appendChild(heart);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    heart.remove();
+                }, duration * 1000);
+            }
+            
+            // Function to show love message
+            function showLoveMessage() {
+                const message = document.createElement('div');
+                message.className = 'love-message';
+                message.textContent = 'love';
+                document.body.appendChild(message);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    message.remove();
+                }, 2000);
+            }
+            
+            // Listen for key presses
+            document.addEventListener('keypress', (e) => {
+                // Add the typed character to our string
+                typedString += e.key.toLowerCase();
+                
+                // Keep only the last 4 characters
+                if (typedString.length > 4) {
+                    typedString = typedString.slice(-4);
+                }
+                
+                // Check if 'love' was typed
+                if (typedString.includes('love')) {
+                    // Reset the typed string
+                    typedString = '';
+                    
+                    // Show love message
+                    showLoveMessage();
+                    
+                    // Create multiple falling hearts
+                    for (let i = 0; i < 20; i++) {
+                        setTimeout(createFallingHeart, i * 150);
+                    }
+                }
+            });
+            
+            // Easter Egg: Show all Easter eggs when clicking privacy 5 times
+            const privacyTitle = document.getElementById('privacyTitle');
+            let privacyClickCount = 0;
+            let privacyLastClickTime = 0;
+            
+            if (privacyTitle) {
+                privacyTitle.title = 'Click me 5 times quickly!';
+                
+                privacyTitle.addEventListener('click', () => {
+                    const now = Date.now();
+                    // Reset count if more than 200ms passed since last click
+                    if (now - privacyLastClickTime > 200) {
+                        privacyClickCount = 0;
+                    }
+                    
+                    privacyClickCount++;
+                    privacyLastClickTime = now;
+                    
+                    if (privacyClickCount >= 5) {
+                        privacyClickCount = 0;
+                        showAllEasterEggs();
+                    }
+                });
+            }
+            
+            // Function to show all Easter eggs
+            function showAllEasterEggs() {
+                // Create modal
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '0';
+                modal.style.left = '0';
+                modal.style.width = '100%';
+                modal.style.height = '100%';
+                modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                modal.style.display = 'flex';
+                modal.style.justifyContent = 'center';
+                modal.style.alignItems = 'center';
+                modal.style.zIndex = '2000';
+                modal.style.padding = '20px';
+                modal.style.boxSizing = 'border-box';
+                modal.style.cursor = 'pointer';
+                modal.onclick = () => modal.remove();
+                
+                // Modal content
+                const content = document.createElement('div');
+                content.style.backgroundColor = '#1e1e2e';
+                content.style.borderRadius = '12px';
+                content.style.padding = '24px';
+                content.style.maxWidth = '500px';
+                content.style.width = '100%';
+                content.style.maxHeight = '80vh';
+                content.style.overflowY = 'auto';
+                content.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.3)';
+                content.onclick = (e) => e.stopPropagation();
+                
+                // Title
+                const title = document.createElement('h2');
+                title.textContent = '🎉 Easter Eggs';
+                title.style.marginTop = '0';
+                title.style.color = '#f8f8f2';
+                title.style.borderBottom = '1px solid #44475a';
+                title.style.paddingBottom = '10px';
+                title.style.marginBottom = '20px';
+                
+                // Easter eggs list
+                const list = document.createElement('div');
+                
+                // Easter Egg 1
+                const egg1 = document.createElement('div');
+                egg1.style.marginBottom = '20px';
+                egg1.innerHTML = `
+                    <h3 style="color: #ff79c6; margin-bottom: 5px;">1. Floating Hearts (Mobile and Desktop)</h3>
+                    <p style="margin-top: 0; color: #f8f8f2;">Click the seconds display 5 times quickly to activate floating hearts animation.</p>
+                `;
+                
+                // Easter Egg 2
+                const egg2 = document.createElement('div');
+                egg2.style.marginBottom = '20px';
+                egg2.innerHTML = `
+                    <h3 style="color: #50fa7b; margin-bottom: 5px;">2. Love is in the Air (Desktop)</h3>
+                    <p style="margin-top: 0; color: #f8f8f2;">Type "love" (in lowercase) anywhere on the page to see a shower of hearts.</p>
+                `;
+                
+                // Close button
+                const closeButton = document.createElement('button');
+                closeButton.textContent = 'Close';
+                closeButton.style.marginTop = '20px';
+                closeButton.style.padding = '8px 20px';
+                closeButton.style.backgroundColor = '#44475a';
+                closeButton.style.color = '#f8f8f2';
+                closeButton.style.border = 'none';
+                closeButton.style.borderRadius = '4px';
+                closeButton.style.cursor = 'pointer';
+                closeButton.style.float = 'right';
+                closeButton.onclick = () => modal.remove();
+                
+                // Assemble the modal
+                list.appendChild(egg1);
+                list.appendChild(egg2);
+                
+                // Add Christian Symbol Easter Egg
+                const egg3 = document.createElement('div');
+                egg3.style.marginBottom = '20px';
+                egg3.innerHTML = `
+                    <h3 style="color: #8be9fd; margin-bottom: 5px;">3. Christian Symbol ✝️ (Desktop)</h3>
+                    <p style="margin-top: 0; color: #f8f8f2;">Type "god" or "jesus" to see floating Christian symbols</p>
+                `;
+                list.appendChild(egg3);
+                
+                content.appendChild(title);
+                content.appendChild(list);
+                content.appendChild(closeButton);
+                modal.appendChild(content);
+                document.body.appendChild(modal);
+                
+                // Close with Escape key
+                const handleKeyDown = (e) => {
+                    if (e.key === 'Escape') {
+                        modal.remove();
+                        document.removeEventListener('keydown', handleKeyDown);
+                    }
+                };
+                document.addEventListener('keydown', handleKeyDown);
+            }
+        });
+        
+        // Christian Symbol Easter Egg
+        document.addEventListener('DOMContentLoaded', function() {
+            let typedString = '';
+            const christianSymbols = ['✝️', '✟', '✞', '✝'];
+            
+            function createChristianSymbol() {
+                const symbol = document.createElement('div');
+                symbol.className = 'christian-symbol';
+                symbol.textContent = christianSymbols[Math.floor(Math.random() * christianSymbols.length)];
+                
+                // Random position
+                const posX = Math.random() * (window.innerWidth - 100);
+                const posY = Math.random() * (window.innerHeight - 100);
+                const size = Math.random() * 100 + 50; // 50-150px
+                const rotation = Math.random() * 360; // 0-360 degrees
+                const opacity = Math.random() * 0.7 + 0.3; // 0.3-1.0
+                
+                symbol.style.left = `${posX}px`;
+                symbol.style.top = `${posY}px`;
+                symbol.style.fontSize = `${size}px`;
+                symbol.style.transform = `rotate(${rotation}deg) scale(0)`;
+                symbol.style.opacity = opacity;
+                
+                document.body.appendChild(symbol);
+                
+                // Animate in
+                setTimeout(() => {
+                    symbol.style.transition = 'all 1s ease-out';
+                    symbol.style.transform = `rotate(${rotation + 360}deg) scale(1)`;
+                }, 10);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    symbol.style.transition = 'all 2s ease-in';
+                    symbol.style.opacity = '0';
+                    symbol.style.transform = `rotate(${rotation + 720}deg) scale(0)`;
+                    
+                    // Remove from DOM after animation completes
+                    setTimeout(() => {
+                        if (symbol.parentNode) {
+                            symbol.parentNode.removeChild(symbol);
+                        }
+                    }, 2000);
+                }, 3000);
+            }
+            
+            // Listen for key presses
+            document.addEventListener('keypress', (e) => {
+                typedString += e.key.toLowerCase();
+                
+                // Keep only the last 6 characters
+                if (typedString.length > 6) {
+                    typedString = typedString.slice(-6);
+                }
+                
+                // Check for 'god' or 'jesus'
+                if (typedString.includes('god') || typedString.includes('jesus')) {
+                    typedString = ''; // Reset
+                    
+                    // Create multiple symbols
+                    for (let i = 0; i < 10; i++) {
+                        setTimeout(createChristianSymbol, i * 300);
+                    }
+                }
+            });
+            
+            // Add to Easter eggs list
+            const originalShowAllEasterEggs = window.showAllEasterEggs || function(){};
+            window.showAllEasterEggs = function() {
+                originalShowAllEasterEggs();
+                
+                const list = document.querySelector('.version-history-body');
+                if (list) {
+                    // Remove existing entry if it exists
+                    const existingEgg = list.querySelector('h3:contains("Christian Symbol")')?.parentElement;
+                    if (existingEgg) existingEgg.remove();
+                    
+                    const egg = document.createElement('div');
+                    egg.style.marginBottom = '20px';
+                    egg.innerHTML = `
+                        <h3 style="color: #8be9fd; margin-bottom: 5px;">3. Christian Symbol</h3>
+                        <p style="margin-top: 0; color: #f8f8f2;">Type "god" or "jesus" to see floating Christian symbols ✝️</p>
+                    `;
+                    list.appendChild(egg);
+                }
+            };
+        });
+    </script>
+    <style>
+        .christian-symbol {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            user-select: none;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+    </style>
+</body>
+</html>
