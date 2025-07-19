@@ -199,6 +199,27 @@ function initScrollIndicator() {
     // Bounce Animation
     scrollIndicator.style.animation = 'bounce 2s infinite';
     
+    // Mache den Scroll-Indikator klickbar
+    scrollIndicator.style.cursor = 'pointer';
+    
+    // Click Handler - scrollt zur zweiten Section
+    scrollIndicator.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Finde die zweite Section
+        const sections = document.querySelectorAll('.section');
+        if (sections.length > 1) {
+            const targetSection = sections[1];
+            smoothScrollTo(targetSection);
+        } else {
+            // Fallback: Scrolle um Viewport-Höhe
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        }
+    });
+    
     // Verstecke bei Scroll
     let hidden = false;
     window.addEventListener('scroll', () => {

@@ -79,6 +79,10 @@ function initMainMenu() {
         if (btn) {
             btn.style.display = 'block';
             btn.classList.remove('visible');
+            // Überschreibe CSS opacity für Animation
+            btn.style.opacity = '0';
+            btn.style.transform = 'translateY(-20px) scale(0.9)';
+            btn.style.pointerEvents = 'none';
         }
     });
     
@@ -132,6 +136,7 @@ function toggleMainMenu() {
             btn.classList.add('visible');
             btn.style.transform = 'translateY(0) scale(1)';
             btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
         });
         
         // Animation fertig
@@ -160,6 +165,7 @@ function closeMainMenu() {
         btn.style.transitionDelay = `${index * 30}ms`;
         btn.style.transform = 'translateY(-10px) scale(0.95)';
         btn.style.opacity = '0';
+        btn.style.pointerEvents = 'none';
         
         setTimeout(() => {
             btn.classList.remove('visible');
