@@ -138,17 +138,37 @@
 
 
 
+/* ========================================
+   BODY STYLING MIT THEME-UNTERSTÜTZUNG
+   
+   WICHTIG FÜR YANNIK:
+   Der body hat jetzt zwei verschiedene Hintergründe:
+   - Light Mode: Bild mit buntem Gradient-Overlay
+   - Dark Mode: Bild mit dunklem Gradient-Overlay
+   
+   Das Bild bleibt gleich, nur der Overlay ändert sich!
+   ======================================== */
+
 body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Quicksand', 'Nunito', 'Baloo 2', 'Poppins', Arial, sans-serif;
-    color: #23272f;
-    /* Hochwertiger Gradient + Bild */
+    color: var(--text);
+    /* Light Mode: Heller, bunter Gradient */
     background: url('love.jpg'), linear-gradient(135deg, rgba(123,47,242,0.72) 0%, rgba(243,87,168,0.60) 60%, rgba(58,141,222,0.60) 100%);
     background-size: cover, cover;
     background-repeat: no-repeat, no-repeat;
     background-position: center center, center center;
     background-attachment: fixed, fixed;
+}
+
+/* Dark Mode Body Anpassungen */
+[data-theme="dark"] body,
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body {
+    /* Dark Mode: Dunklerer Gradient für bessere Lesbarkeit */
+    background: url('love.jpg'), linear-gradient(135deg, rgba(26,26,46,0.95) 0%, rgba(15,52,96,0.90) 60%, rgba(22,33,62,0.90) 100%);
+  }
 }
 
 .snap-container {
@@ -173,10 +193,10 @@ body {
 
 
 .milestones-box {
-    background: rgba(255,255,255,0.78);
-    color: #23272f;
+    background: var(--milestone-bg);
+    color: var(--text);
     border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(123, 47, 242, 0.14), 0 2px 8px rgba(243,87,168,0.09);
+    box-shadow: var(--shadow);
     padding: 2.5rem 3rem;
     min-width: 320px;
     max-width: 1200px;
@@ -191,6 +211,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    border: 1px solid var(--border-color);
 }
 
 .milestones-box h2 {
@@ -199,7 +220,7 @@ body {
     margin: 0 auto 1.5rem auto;
     padding: 0;
     letter-spacing: 1px;
-    color: #7b2ff2;
+    color: var(--primary);
     text-align: center;
     width: 100%;
 }
@@ -212,11 +233,11 @@ body {
 }
 
 #milestones-list li {
-    background: rgba(10, 160, 13, 0.07);
+    background: var(--milestone-upcoming);
     border-radius: 18px;
     margin: 0 auto 1.1rem auto;
     padding: 1.1rem 1.6rem;
-    box-shadow: 0 2px 12px rgba(58,141,222,0.06);
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -227,6 +248,7 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
     overflow: hidden;
+    border: 1px solid var(--border-color);
 }
 
 #milestones-list li .milestone-title, .milestone-detail {
@@ -235,18 +257,18 @@ body {
 
 #milestones-list li .milestone-title {
     font-weight: 700;
-    color: #23272f;
+    color: var(--text);
     margin-bottom: 0.3rem;
 }
 
 #milestones-list li .milestone-detail {
     font-size: 0.97rem;
-    color: #555;
+    color: var(--text-light);
 }
 
 #milestones-list li.reached {
-    border-left: 6px solid #0055ff;
-    background: rgba(58,141,222,0.10);
+    border-left: 6px solid var(--primary);
+    background: var(--milestone-reached);
     transform: translateY(0) scale(1);
     opacity: 1;
 }
@@ -272,16 +294,16 @@ body {
 }
 
 #milestones-list li.upcoming {
-    border-left: 6px solid #f357a8;
-    background: rgba(243,87,168,0.09);
+    border-left: 6px solid var(--primary-light);
+    background: var(--milestone-upcoming);
 }
 
 
 .container {
-    background: rgba(255,255,255,0.18);
+    background: var(--countdown-bg);
     padding: 2rem 4rem;
     border-radius: 999px;
-    box-shadow: 0 16px 64px 0 rgba(123, 47, 242, 0.22), 0 4px 12px rgba(243,87,168,0.10);
+    box-shadow: var(--countdown-shadow);
     text-align: center;
     display: inline-block;
     margin: 4rem auto;
@@ -290,14 +312,14 @@ body {
     width: auto;
     backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
-    border: 1.5px solid rgba(255,255,255,0.28);
+    border: 1.5px solid var(--border-color);
 }
 
 
 
 
 h1 {
-    color: #ffffff;
+    color: var(--countdown-text);
     margin-bottom: 3.2rem;
     font-size: 2.8rem;
     font-weight: 700;
@@ -317,18 +339,178 @@ h1 {
    PREMIUM MOBILE DESIGN
    ===================== */
 
-/* Base Styles */
+/* ========================================
+   CSS VARIABLEN FÜR THEME-SYSTEM
+   
+   Von: MrMcMicky (Michael)
+   
+   KONZEPT FÜR YANNIK:
+   CSS-Variablen (auch Custom Properties genannt) sind wie
+   Variablen in der Programmierung. Sie speichern Werte,
+   die überall in der CSS-Datei verwendet werden können.
+   
+   Vorteile:
+   - Zentrale Stelle für alle Farben
+   - Einfaches Wechseln zwischen Themes
+   - Konsistentes Design
+   
+   Syntax: --variablen-name: wert;
+   Verwendung: color: var(--variablen-name);
+   ======================================== */
+
+/* Standard Theme (Light Mode) */
 :root {
+  /* Hauptfarben */
   --primary: #8e44ad;
   --primary-light: #9b59b6;
+  --primary-dark: #7b3aa0;
+  
+  /* Textfarben */
   --text: #2d3436;
   --text-light: #636e72;
+  --text-inverse: #ffffff;
+  
+  /* Hintergrundfarben */
   --background: #ffffff;
+  --background-secondary: #f8f9fa;
   --card-bg: #f8f9fa;
+  --overlay-bg: rgba(0, 0, 0, 0.9);
+  
+  /* UI Elemente */
+  --border-color: rgba(0, 0, 0, 0.1);
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+  
+  /* Countdown spezifisch */
+  --countdown-bg: rgba(255, 255, 255, 0.18);
+  --countdown-text: #ffffff;
+  --countdown-shadow: 0 16px 64px rgba(123, 47, 242, 0.22);
+  
+  /* Meilensteine */
+  --milestone-bg: rgba(255, 255, 255, 0.78);
+  --milestone-upcoming: rgba(243, 87, 168, 0.09);
+  --milestone-reached: rgba(58, 141, 222, 0.10);
+  
+  /* Standard Einstellungen */
   --border-radius: 12px;
   --transition: all 0.3s ease;
-  --overlay-bg: rgba(0, 0, 0, 0.9);
+}
+
+/* ========================================
+   DARK MODE THEME
+   
+   ERKLÄRUNG FÜR YANNIK:
+   Das Dark Mode Theme wird aktiviert, wenn:
+   1. Der Benutzer es manuell einschaltet (data-theme="dark")
+   2. Das System im Dark Mode ist (prefers-color-scheme: dark)
+   
+   Die [data-theme="dark"] Selektor überschreibt die 
+   Standard-Variablen wenn Dark Mode aktiv ist.
+   ======================================== */
+
+/* Dark Mode - Manuell aktiviert */
+[data-theme="dark"] {
+  /* Hauptfarben (bleiben gleich für Markenidentität) */
+  --primary: #9b59b6;
+  --primary-light: #a569bd;
+  --primary-dark: #8e44ad;
+  
+  /* Textfarben (invertiert) */
+  --text: #ecf0f1;
+  --text-light: #bdc3c7;
+  --text-inverse: #2c3e50;
+  
+  /* Hintergrundfarben (dunkle Töne) */
+  --background: #1a1a2e;
+  --background-secondary: #16213e;
+  --card-bg: #0f3460;
+  --overlay-bg: rgba(0, 0, 0, 0.95);
+  
+  /* UI Elemente (angepasst für dunklen Hintergrund) */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.4);
+  
+  /* Countdown (bessere Lesbarkeit im Dunkeln) */
+  --countdown-bg: rgba(15, 52, 96, 0.4);
+  --countdown-text: #ecf0f1;
+  --countdown-shadow: 0 16px 64px rgba(155, 89, 182, 0.3);
+  
+  /* Meilensteine (sanfte Farben für Augenschonung) */
+  --milestone-bg: rgba(22, 33, 62, 0.9);
+  --milestone-upcoming: rgba(243, 87, 168, 0.15);
+  --milestone-reached: rgba(58, 141, 222, 0.15);
+}
+
+/* ========================================
+   AUTOMATISCHER DARK MODE
+   
+   BROWSER-FEATURE ERKLÄRUNG:
+   'prefers-color-scheme' ist eine Media Query, die erkennt,
+   ob der Benutzer in seinem Betriebssystem Dark Mode 
+   aktiviert hat (Windows, macOS, iOS, Android).
+   
+   So wird die Website automatisch dunkel, wenn das
+   System auch dunkel ist - außer der Benutzer hat
+   manuell eine Präferenz gesetzt.
+   ======================================== */
+
+/* Systemweiter Dark Mode (wenn keine manuelle Einstellung) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Hauptfarben */
+    --primary: #9b59b6;
+    --primary-light: #a569bd;
+    --primary-dark: #8e44ad;
+    
+    /* Textfarben */
+    --text: #ecf0f1;
+    --text-light: #bdc3c7;
+    --text-inverse: #2c3e50;
+    
+    /* Hintergrundfarben */
+    --background: #1a1a2e;
+    --background-secondary: #16213e;
+    --card-bg: #0f3460;
+    --overlay-bg: rgba(0, 0, 0, 0.95);
+    
+    /* UI Elemente */
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.4);
+    
+    /* Countdown */
+    --countdown-bg: rgba(15, 52, 96, 0.4);
+    --countdown-text: #ecf0f1;
+    --countdown-shadow: 0 16px 64px rgba(155, 89, 182, 0.3);
+    
+    /* Meilensteine */
+    --milestone-bg: rgba(22, 33, 62, 0.9);
+    --milestone-upcoming: rgba(243, 87, 168, 0.15);
+    --milestone-reached: rgba(58, 141, 222, 0.15);
+  }
+}
+
+/* ========================================
+   SMOOTH THEME TRANSITIONS
+   
+   ANIMATION ERKLÄRUNG:
+   Wenn zwischen Light und Dark Mode gewechselt wird,
+   sollen die Farben sanft überblenden statt hart
+   umzuspringen. Das macht die UX angenehmer.
+   ======================================== */
+
+/* Theme-Übergang Animation */
+* {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Schnellere Übergänge für interaktive Elemente */
+button, a, input, .menu-button {
+  transition: all 0.2s ease;
 }
 
 @media (max-width: 600px) {

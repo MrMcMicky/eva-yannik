@@ -81,6 +81,14 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('❌ Performance Modul nicht gefunden');
         }
         
+        // 7. Initialisiere Dark Mode
+        if (window.darkModeModule) {
+            window.darkModeModule.init();
+            console.log('✅ Dark Mode initialisiert');
+        } else {
+            console.error('❌ Dark Mode Modul nicht gefunden');
+        }
+        
     } catch (error) {
         console.error('❌ Fehler bei der Initialisierung:', error);
         // Zeige Fehlermeldung für Entwickler
