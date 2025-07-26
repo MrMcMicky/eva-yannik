@@ -1,0 +1,109 @@
+{
+  "features": [
+    "Countdown Timer",
+    "Milestones Tracking",
+    "Splash Screen",
+    "Bible Feature",
+    "Settings Panel",
+    "Version History"
+  ],
+  "buttons": [
+    {
+      "id": "closeSplash",
+      "text": ""
+    },
+    {
+      "id": "closeNotice",
+      "text": "×"
+    },
+    {
+      "id": "closeInfo",
+      "text": ""
+    },
+    {
+      "id": "showUpcomingFeatures",
+      "text": ""
+    },
+    {
+      "id": "showConfigState",
+      "text": ""
+    },
+    {
+      "id": "showVersionHistory",
+      "text": ""
+    },
+    {
+      "id": "closeVersionHistory",
+      "text": ""
+    },
+    {
+      "id": "closeConfigState",
+      "text": ""
+    },
+    {
+      "id": "closeUpcomingFeatures",
+      "text": ""
+    },
+    {
+      "id": "closeSettings",
+      "text": ""
+    },
+    {
+      "id": "newMenuButton",
+      "text": ""
+    },
+    {
+      "id": "bibleButton",
+      "text": ""
+    },
+    {
+      "id": "newSettingsButton",
+      "text": ""
+    },
+    {
+      "id": "infoButton",
+      "text": ""
+    },
+    {
+      "id": "closeBible",
+      "text": ""
+    },
+    {
+      "id": "toggleReachedBtn",
+      "text": ""
+    }
+  ],
+  "eventListeners": [
+    "DOMContentLoaded",
+    "click",
+    "resize",
+    "keydown",
+    "keypress"
+  ],
+  "complexFunctions": [],
+  "potentialIssues": [
+    {
+      "type": "Code Organization",
+      "issue": "Large amount of inline JavaScript (58033 characters)",
+      "severity": "Medium",
+      "suggestion": "Consider moving JavaScript to separate files"
+    }
+  ],
+  "improvements": [
+    {
+      "area": "Code Organization",
+      "current": "All JavaScript is inline in HTML",
+      "improved": "Separate JavaScript into modules:\n  - countdown.js (timer logic)\n  - ui-controls.js (buttons and overlays)\n  - animations.js (visual effects)\n  - main.js (initialization)"
+    },
+    {
+      "area": "Variable Naming",
+      "current": "Some variables use unclear names",
+      "improved": "Use descriptive names:\n  - btn → closeButton\n  - el → element\n  - cfg → configuration"
+    },
+    {
+      "area": "Comments",
+      "current": "Limited comments in code",
+      "improved": "Add comments explaining:\n  - What each function does\n  - Complex logic\n  - Configuration options"
+    }
+  ]
+}
