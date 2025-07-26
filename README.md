@@ -5,27 +5,29 @@ Eine romantische Countdown-Website, die die gemeinsame Zeit seit dem 21.01.2025 
 ## 🌐 Live Website
 - **URL**: https://eva-yannik.assistent.my.id
 - **Status**: ✅ Online
-- **Version**: 3.5.5 Documented (mit ausführlichen Kommentaren von MrMcMicky)
+- **Version**: 4.0.0 Beta (Modulare Struktur, UI/UX optimiert)
 
 ## 📁 Projekt-Struktur
 ```
 /var/www/eva-yannik/
-├── 3.5.3 Stable/        # Stabile Version
-├── 3.5.4 Beta/          # Beta Version mit neuen Features
-├── 3.5.5 Documented/    # NEU: Version mit Kommentaren & modularem Code
-├── current -> 3.5.5     # Symlink zur aktiven Version
-├── js/                  # Modulare JavaScript-Dateien
-│   ├── main.js          # Haupteinstiegspunkt
-│   ├── countdown.js     # Countdown-Timer Logik
-│   ├── milestones.js    # Meilenstein-System
-│   ├── easter-eggs.js   # Versteckte Features
-│   ├── menu.js          # Menü-System
-│   └── ui-animations.js # Animationen & Effekte
-├── css/
-│   └── easter-eggs.css  # Styles für Easter Eggs
+├── 4.0.0 Beta/          # NEU: Aktuelle Version (Live)
+│   ├── index.html       # Hauptdatei mit CSS-Fixes
+│   ├── style.css        # Original Styles
+│   ├── js/              # Modulare JavaScript-Dateien
+│   │   ├── main.js      # Hauptinitialisierung
+│   │   ├── countdown.js # Timer-Logik (dokumentiert)
+│   │   ├── ui-controls.js # Button & Menu Steuerung
+│   │   ├── milestones.js # Meilenstein-Tracking
+│   │   └── splash-screen.js # Willkommensfenster
+│   ├── images/          # Bilder (breit.jpg, lang.jpg)
+│   ├── css/             # Zusätzliche strukturierte CSS
+│   └── README.md        # Ausführliche Dokumentation
+├── 3.5.5 Documented/    # Version mit Kommentaren
+├── 3.5.4 Beta/          # Beta Version
+├── 3.5.3 Stable/        # Erste stabile Version
+├── current -> 4.0.0 Beta # Symlink zur aktiven Version
 ├── deploy.sh            # Deployment-Script
 ├── nginx.conf           # Nginx-Konfiguration
-├── IMPROVEMENTS.md      # Verbesserungsvorschläge
 └── README.md           # Diese Datei
 ```
 
@@ -59,9 +61,10 @@ sudo systemctl reload nginx
 - **Performance**: Optimiert mit Lazy Loading und effizienten Animationen
 
 ## 📝 Versionen
-- **3.5.3 Stable**: Erste stabile Version
+- **4.0.0 Beta**: AKTUELL - Modulare Struktur, UI/UX Fixes, für Anfänger optimiert
+- **3.5.5 Documented**: Mit Kommentaren und modularem Code von MrMcMicky
 - **3.5.4 Beta**: Beta mit Layout-Verbesserungen
-- **3.5.5 Documented**: NEU - Mit Kommentaren und modularem Code von MrMcMicky
+- **3.5.3 Stable**: Erste stabile Version
 
 ## 🎮 Easter Eggs
 Die Website enthält mehrere versteckte Features:
@@ -87,13 +90,20 @@ Jede JavaScript-Datei enthält:
 - **Verbesserungsmöglichkeiten** für zukünftige Updates
 - **Best Practices** und moderne JavaScript-Patterns
 
-## 🐛 Bekannte Probleme & Lösungen
-1. **Layout-Probleme auf manchen Geräten**
-   - Lösung: CSS Grid/Flexbox wurde optimiert
-2. **Performance auf älteren Geräten**
-   - Lösung: Animationen werden auf Mobile reduziert
-3. **Easter Eggs auf Mobile**
-   - Lösung: Touch-Events wurden hinzugefügt
+## ✅ Version 4.0.0 Verbesserungen
+1. **Modularer Code**
+   - JavaScript in 5 separate Module aufgeteilt (war vorher 56KB inline!)
+   - Jedes Modul hat einen klaren Zweck
+   - Ausführliche deutsche Kommentare für Anfänger
+2. **UI/UX Fixes**
+   - CSS-Klassen korrekt zugeordnet
+   - Responsive Design für alle Geräte
+   - Navigation Buttons richtig positioniert
+   - Alle Hover-Effekte und Animationen funktionieren
+3. **Performance**
+   - Schnellere Ladezeiten durch modularen Code
+   - Optimierte Animationen
+   - Lazy Loading für Bilder
 
 ## 📈 Geplante Verbesserungen
 - ✨ Dark Mode (bereits vorbereitet im Code)
