@@ -18,8 +18,8 @@ class UIControls {
             // Overlays (die Fenster die sich öffnen)
             menuOverlay: document.querySelector('.menu-overlay'),
             bibleOverlay: document.querySelector('.bible-overlay'),
-            settingsOverlay: document.querySelector('.settings-overlay'),
-            infoOverlay: document.querySelector('.info-overlay'),
+            settingsOverlay: document.getElementById('settingsOverlay'),
+            infoOverlay: document.getElementById('infoOverlay'),
             
             // Schließen-Buttons
             closeBible: document.getElementById('closeBible'),

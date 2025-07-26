@@ -1,0 +1,180 @@
+/**
+ * countdown.css - Countdown Timer Komponente
+ * 
+ * Zeigt die Zeit seit dem Start der Beziehung
+ */
+
+/* Countdown Section */
+.countdown-section {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(102,126,234,0.05) 100%);
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #333;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Countdown Container */
+#countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Zeit-Einheiten */
+.time-unit {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    min-width: 100px;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effekt */
+.time-unit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.time-unit:hover::before {
+    transform: scaleX(1);
+}
+
+.time-unit:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Zeit-Werte */
+.time-value {
+    display: block;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #667eea;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+}
+
+/* Zeit-Labels */
+.time-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* Sekunden Special Animation */
+.seconds-wrapper {
+    cursor: pointer;
+    position: relative;
+}
+
+.seconds-wrapper .time-value {
+    transition: all 0.15s ease;
+}
+
+.seconds-wrapper:active .time-value {
+    transform: scale(0.9);
+}
+
+/* Easter Egg Indikator */
+.seconds-wrapper::after {
+    content: '✨';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.75rem;
+    opacity: 0;
+    transform: rotate(-15deg);
+    transition: all 0.3s ease;
+}
+
+.seconds-wrapper:hover::after {
+    opacity: 0.6;
+    transform: rotate(0deg);
+}
+
+/* Pulse Animation für besondere Momente */
+@keyframes pulse-special {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 
+            0 10px 15px -3px rgba(102, 126, 234, 0.3),
+            0 4px 6px -2px rgba(102, 126, 234, 0.2);
+    }
+}
+
+.time-unit.special {
+    animation: pulse-special 2s ease-in-out infinite;
+}
+
+/* Mobile Optimierungen */
+@media (max-width: 640px) {
+    #countdown {
+        gap: 0.75rem;
+    }
+    
+    .time-unit {
+        min-width: 80px;
+        padding: 1rem;
+    }
+    
+    .time-value {
+        font-size: 2rem;
+    }
+    
+    .time-label {
+        font-size: 0.625rem;
+    }
+}
+
+/* Tablet und größer */
+@media (min-width: 768px) {
+    #countdown {
+        gap: 1.5rem;
+    }
+    
+    .time-unit {
+        min-width: 120px;
+        padding: 2rem;
+    }
+}
+
+/* Große Bildschirme */
+@media (min-width: 1024px) {
+    .time-unit {
+        min-width: 140px;
+    }
+}
