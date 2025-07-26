@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Legal & Privacy">Rechtliches & Datenschutz</title>
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --primary-light: #eef2ff;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --border-color: #e5e7eb;
+            --background: #f9fafb;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --animation-duration: 0.6s;
+        }
+        
+        /* Prevent FOUC */
+        body {
+            visibility: hidden;
+        }
+        
+        /* Initial state for page load animation */
+        body.loaded {
+            opacity: 0;
+            animation: fadeIn var(--animation-duration) ease-out forwards;
+            visibility: visible;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease-out forwards;
+            animation-delay: calc(var(--animation-duration) * 0.2);
+        }
+        
+        .section:nth-child(2) { animation-delay: calc(var(--animation-duration) * 0.3); }
+        .section:nth-child(3) { animation-delay: calc(var(--animation-duration) * 0.4); }
+        .section:nth-child(4) { animation-delay: calc(var(--animation-duration) * 0.5); }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .lang-switch {
+            opacity: 0;
+            transform: translateY(-10px);
+            animation: slideDown 0.5s ease-out forwards;
+            animation-delay: calc(var(--animation-duration) * 0.8);
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--card-bg);
+            padding: 6px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            padding: 4px 10px;
+            margin: 0;
+            cursor: pointer;
+            color: var(--text-light);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+
+        .lang-switch button:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }
+
+        .lang-switch button.active {
+            color: var(--primary-color);
+            font-weight: 600;
+            background-color: var(--primary-light);
+        }
+
+        .lang-switch span {
+            color: var(--border-color);
+            user-select: none;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .section:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-1px);
+        }
+
+        h2 {
+            margin: 0 0 16px 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        p {
+            margin: 0 0 16px 0;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #3a56e8;
+            text-decoration: underline;
+        }
+
+        /* Fixed back button overlay */
+        .back-link {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(0);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 90;
+            border: 1px solid var(--border-color);
+            min-width: 180px;
+            text-align: center;
+            /* Initial state for animation */
+            opacity: 0;
+            transform: translateX(-50%) translateY(20px);
+            /* Animation */
+            animation: fadeInUp 0.5s ease-out 0.8s forwards;
+        }
+
+        .back-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 6px 16px rgba(74, 108, 247, 0.25);
+            text-decoration: none;
+        }
+
+        .back-link svg {
+            transition: transform 0.3s ease;
+            width: 16px;
+            height: 16px;
+        }
+
+        .back-link:hover svg {
+            transform: translateX(-4px);
+        }
+        
+        /* Add some padding to the bottom of the container to prevent content from being hidden behind the button */
+        .container {
+            padding-bottom: 80px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 16px;
+                margin: 40px auto 20px;
+            }
+            
+            .section {
+                padding: 20px 16px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .lang-switch {
+                top: 10px;
+                right: 10px;
+                padding: 4px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="changeLanguage('de')" class="active">DE</button>
+            <span>|</span>
+            <button onclick="changeLanguage('en')">EN</button>
+        </div>
+        
+        <h1 data-en="Legal & Privacy">Rechtliches & Datenschutz</h1>
+        
+        <div class="section">
+            <h2 data-en="Terms & Conditions">Allgemeine Geschäftsbedingungen</h2>
+            <p data-en="Welcome to my website. By continuing to use this website, you agree to comply with my Terms & Conditions.">Willkommen auf meiner Website. Durch die weitere Nutzung dieser Website erklären Sie sich mit meinen Allgemeinen Geschäftsbedingungen einverstanden.</p>
+            
+            <h3 data-en="1. General Information">1. Allgemeine Informationen</h3>
+            <p data-en="This website is operated as a personal project. All content is provided for private use only.">Diese Website wird als persönliches Projekt betrieben. Alle Inhalte dienen ausschliesslich privaten Zwecken.</p>
+            
+            <h3 data-en="2. Copyright">2. Urheberrecht</h3>
+            <p data-en="All content, including texts, images, and graphics, is protected by copyright unless otherwise stated.">Alle Inhalte, einschliesslich Texte, Bilder und Grafiken, sind, soweit nicht anders angegeben, urheberrechtlich geschützt.</p>
+        </div>
+        
+        <div class="section" id="privacy">
+            <h2 data-en="Privacy Policy">Datenschutzerklärung</h2>
+            <p data-en="This website is for private purposes only.">Diese Website dient ausschliesslich privaten Zwecken.</p>
+            
+            <h3 data-en="Data Collection">Datenerhebung</h3>
+            <p data-en="No personal data is collected, stored, or processed.">Es werden keine personenbezogenen Daten erhoben, gespeichert oder verarbeitet.</p>
+            
+            <h3 data-en="Cookies & Tracking">Cookies & Tracking</h3>
+            <p data-en="No cookies are set and no tracking services (such as Google Analytics) are used.">Es werden keine Cookies gesetzt und keine Tracking-Dienste (wie z. B. Google Analytics) verwendet.</p>
+            
+            <h3 data-en="External Links">Externe Links</h3>
+            <p data-en="If you are redirected to an external website via a link, the privacy policies of the respective operators apply.">Solltest du über einen Link auf eine externe Website weitergeleitet werden, gelten die Datenschutzbestimmungen der jeweiligen Betreiber.</p>
+        </div>
+        
+        <!-- Back button moved outside of container to be fixed at bottom -->
+        <a href="index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span data-en="Back to main page">Zurück zur Hauptseite</span>
+        </a>
+    </div>
+    <script>
+        function changeLanguage(lang) {
+            // Update active button
+            document.querySelectorAll('.lang-switch button').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent === lang.toUpperCase());
+            });
+            
+            // Update page title
+            const title = document.querySelector('title');
+            title.textContent = lang === 'de' ? 'Rechtliches & Datenschutz' : 'Legal & Privacy';
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-en]').forEach(el => {
+                if (lang === 'en') {
+                    // Store the original German text if not already stored
+                    if (!el.hasAttribute('data-de')) {
+                        el.setAttribute('data-de', el.textContent);
+                    }
+                    // Show English text
+                    el.textContent = el.getAttribute('data-en');
+                } else {
+                    // Show stored German text or original content
+                    const germanText = el.getAttribute('data-de') || el.textContent;
+                    el.textContent = germanText;
+                }
+            });
+            
+            // Update URL without reloading the page
+            const newUrl = window.location.pathname + (lang === 'de' ? '' : '?lang=en');
+            window.history.pushState({}, '', newUrl);
+        }
+        
+        // Check for language preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add loaded class to start animations
+            document.body.classList.add('loaded');
+            
+            // Check for language parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const lang = urlParams.get('lang');
+            if (lang === 'en') {
+                changeLanguage('en');
+            }
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Force reflow to ensure animations play when navigating back to the page
+        if (document.readyState === 'complete') {
+            document.body.classList.add('loaded');
+        }
+    </script>
+</body>
+</html>
